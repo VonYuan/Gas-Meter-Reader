@@ -8,9 +8,10 @@ if (isset($_POST['submit'])) {
 	$email = $_POST['email'];
 	$report= $_POST['report'];
 	$date = date('Y-m-d H:i:s');
-	$sql = "INSERT INTO Report (uname,email,address,Date_Of_Report,report,address)
-			VALUES ('$name', '$comment','$date','$report','$address')";
+	$sql = "INSERT INTO Report (uname,email,Date_Of_Report,report,address)
+			VALUES ('$name', '$email','$date','$report','$address')";
 	$result = mysqli_query($conn, $sql);
+	
 	if ($result) {
 		echo "<script>alert('Successfully Report</script>";
 	} else {
@@ -40,12 +41,16 @@ if (isset($_POST['submit'])) {
 				</div>
 			</div>
 			<div class="input-group textarea">
-				<label for="Report">Report</label>
-				<input type="text" name="comment" id="comment" placeholder="Enter Your Report" required>
+				<label for="report">Report</label>
+				<input type="text" name="report" id="report" placeholder="Enter Your Report" required>
 			</div>
 			<div class="input-group">
-				<label for="Email">Email</label>
+				<label for="email">Email</label>
 				<input type="text" name="email" id="email" placeholder="Enter Your Email" required>
+			</div>
+			<div class="input-group textarea">
+				<label for="address">Address</label>
+				<input type="text" name="address" id="address" placeholder="Enter Your Address" required>
 			</div>
 			<div class="input-group">
 				<button name="submit" class="btn">Submit Report</button>

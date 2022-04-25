@@ -1,14 +1,14 @@
 <?php
 include ('connection.php');
 
-// sql to create table
-$sql = "CREATE TABLE Report (
-uname VARCHAR(30) NOT NULL,
-email VARCHAR(50),
-date_of_report date,
-report text,
-address text,
-)";
+
+$sql = "CREATE TABLE Report(
+        uname VARCHAR (30),
+        email VARCHAR (50),
+        Date_Of_Report date,
+        report text,
+        address text
+        )";
 
 if ($conn->query($sql) === TRUE) {
   echo "Table MyGuests created successfully";
