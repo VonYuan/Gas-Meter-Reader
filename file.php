@@ -4,15 +4,17 @@ include 'connection.php';
 
 if (isset($_POST['submit'])) { 
 	$name = $_POST['name']; 
-	$comment = $_POST['comment']; 
+	$address = $_POST['address'];
+	$email = $_POST['email'];
+	$report= $_POST['report'];
 	$date = date('Y-m-d H:i:s');
-	$sql = "INSERT INTO Comments (Username,Comment,Date_Of_Comment)
-			VALUES ('$name', '$comment','$date')";
+	$sql = "INSERT INTO Report (uname,email,address,Date_Of_Report,report,address)
+			VALUES ('$name', '$comment','$date','$report','$address')";
 	$result = mysqli_query($conn, $sql);
 	if ($result) {
 		echo "<script>alert('Successfully Report</script>";
 	} else {
-		echo "<script>alert('Comment does not add.')</script>";
+		echo "<script>alert('Failed To Report.')</script>";
 	}
 }
 
@@ -26,7 +28,7 @@ if (isset($_POST['submit'])) {
 
 	<link rel="stylesheet" type="text/css" href="style.css">
 
-	<title>File</title>
+	<title>Make Report</title>
 </head>
 <body>
 	<div class="wrapper">

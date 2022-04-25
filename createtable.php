@@ -3,8 +3,7 @@ include ('connection.php');
 
 // sql to create table
 $sql = "CREATE TABLE Report (
-firstname VARCHAR(30) NOT NULL,
-lastname VARCHAR(30) NOT NULL,
+uname VARCHAR(30) NOT NULL,
 email VARCHAR(50),
 date_of_report date,
 report text,
